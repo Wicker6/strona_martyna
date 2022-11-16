@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Martyna Wolska</title>
+    <meta name="author" content="Maria Chimowicz">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="osiagniecia.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <a href="index.html"><img src="logo.png" alt="logo" class="logo"></a>
+           <nav>
+               <ul>
+                <li><a href="ja.html">Coś o mnie</a></li>
+                <li><a href="pasje.html">Moje pasje</a></li>
+                <li><a href="osiagniecia.html">Umiejętności</a></li>
+                <li><a href="kontakt.html">Kontakt</a></li>
+               </ul>
+           </nav>
+        </div>
+    </header>
+    <div class="srodek">
+    <div class="skills">
+        <div class="skill">
+          <div class="skill-name">Polski</div>
+          <div class="skill-bar">
+            <div class="skill-per" per="90"></div>
+          </div>
+        </div>
+  
+        <div class="skill">
+          <div class="skill-name">Angielski</div>
+          <div class="skill-bar">
+            <div class="skill-per" per="70"></div>
+          </div>
+        </div>
+  
+        <div class="skill">
+          <div class="skill-name">Matematyka</div>
+          <div class="skill-bar">
+            <div class="skill-per" per="50"></div>
+          </div>
+        </div>
+      </div>
+      </div>
+      <script>
+        $('.skill-per').each(function(){
+          var $this = $(this);
+          var per = $this.attr('per');
+          $this.css("width",per+'%');
+          $({animatedValue: 0}).animate({animatedValue: per},{
+            duration: 1000,
+            step: function(){
+              $this.attr('per', Math.floor(this.animatedValue) + '%');
+            },
+            complete: function(){
+              $this.attr('per', Math.floor(this.animatedValue) + '%');
+            }
+          });
+        });
+      </script>
+</body>
+</html>
